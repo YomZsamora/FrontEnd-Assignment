@@ -55,6 +55,24 @@
     </header>
 
 
+    <section class="gender">
+        <div class="container">
+            <div class="row">
+                <div class="pull-left ckbox">
+                    <input type="checkbox" id="men">
+                    <label for="men"><span class="black-text text-darken-2">Men</span></label>
+                    <input type="checkbox" id="women">
+                    <label for="women"><span class="black-text text-darken-2">Women</span></label>
+                    <input type="checkbox" id="children">
+                    <label for="children"><span class="black-text text-darken-2">Children</span></label>
+                </div>
+                <div class="pull-right">
+                    <button class="btn btn-products">SEE ALL PRODUCTS</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     
 
 

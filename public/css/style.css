@@ -61,3 +61,44 @@ header{
 	color: #ffffff;
 }
 
+/*gender section*/
+section.gender {
+    padding: 50px;
+    background-color: #c6bfa5;
+}
+.gender button:hover {
+    color: #ffffff;
+}
+.btn-products {
+    color: #fff;
+    background-color: #661a00;
+    border-color: #661a00 !important;
+        border-radius: 2px !important;
+        padding: 10px 20px !important;
+}
+[type="checkbox"]+label {
+    font-family: "Lato", sans-serif;
+    position: relative;
+    padding-left: 5px;
+    cursor: pointer;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    font-size: 1.4rem;
+    font-weight: 100;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+    padding-right: 30px;
+    vertical-align:  top;
+}
+label {
+    font-size: 0.8rem;
+    color: #000000;
+}
+.pull-left.ckbox {
+    padding-top: 9px;
+}
+
+
