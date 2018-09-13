@@ -101,4 +101,46 @@ label {
     padding-top: 9px;
 }
 
+/*Products Section*/
+h5.men:before {
+    content: "";
+    display: block;
+    border-top: solid 1px #b2b2b2;
+    width: 100%;
+    height: 1px;
+    top: 295%;
+    z-index: 1;
+  }
+h5.men { margin-top: 90px;}
+h5.men span {
+    background: #fff;
+    padding: 0 20px;
+    position: relative;
+    z-index: 5;
+}
+.yolomy-product {
+    position: relative;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #f5f5f7;
+}
+.yolomy-product.active {
+    border: 4px solid #a99b76;
+}
+.mt25 { margin-top: 25px; }
+.mt45 { 
+    margin-top: 45px; 
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+}
+.pl15 { padding-left: 15px; }
+.pr15 { padding-right: 15px; }
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+h5.type {
+    color: #a99b76;
+}
 

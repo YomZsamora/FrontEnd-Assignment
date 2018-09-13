@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('yolomi');
+    return view('yolomy');
 });
