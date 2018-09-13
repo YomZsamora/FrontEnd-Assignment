@@ -12,6 +12,16 @@ a{
 h1, h2, h3, h4, h5, h6{
 	font-family: "Lato", sans-serif;
 }
+.mb0 { margin-bottom: 0 }
+.mb25 { margin-bottom: 25px; }
+.mt20 { margin-top: 20px; }
+.mt25 { margin-top: 25px; }
+.mt45 { margin-top: 45px; }
+.mt50 { margin-top: 50px; }
+.pl15 { padding-left: 15px; }
+.pr15 { padding-right: 15px; }
+
+.fs22 { font-size: 22px }
 
 /*Header Section*/
 .navbar-transparent .navbar-nav>li>a {
@@ -127,20 +137,66 @@ h5.men span {
 .yolomy-product.active {
     border: 4px solid #a99b76;
 }
-.mt25 { margin-top: 25px; }
 .mt45 { 
     margin-top: 45px; 
     padding-left: 40px !important;
     padding-right: 40px !important;
 }
-.pl15 { padding-left: 15px; }
-.pr15 { padding-right: 15px; }
 .img-fluid {
     max-width: 100%;
     height: auto;
-    margin-top: 20px;
 }
 h5.type {
     color: #a99b76;
 }
 
+/*About Us Section*/
+section.about-us{
+	background: url(../images/backgrounds/about.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+    margin-top: 100px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.about-us h5, .about-us p {
+    color: #ffffff;
+}
+
+.about-us p { font-size:24px; }
+
+/*Twitter Feed Section*/
+section.twitter {
+    background-color: #535154;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+.twitter p {color: #ffffff;font-size: 21px;padding-left: 60px;}
+
+/*Footer Section*/
+footer {
+    background-color: #414141;
+    color: #ffffff;
+}
+.uppercase { text-transform: uppercase; }
+.brief {
+    padding-top: 100px;
+}
+.social {
+    padding-top: 20px;
+}
+.links {
+    padding-top: 140px;
+}
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+footer li {
+    float: left;
+    padding-right: 17px;
+    padding-left: 17px;
+} 
