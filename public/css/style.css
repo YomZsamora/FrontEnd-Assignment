@@ -13,3 +13,51 @@ h1, h2, h3, h4, h5, h6{
 	font-family: "Lato", sans-serif;
 }
 
+/*Header Section*/
+.navbar-transparent .navbar-nav>li>a {
+color: #fff;
+}
+.navbar-transparent .navbar-nav>li>a:hover{
+	color: #ffffff;
+    background-color: transparent;
+}
+.navbar-logo {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 48px;
+    line-height: 20px;
+    color: #ffffff;
+    font-weight: 800;
+}
+a.navbar-logo:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+header{
+	background: url(../images/backgrounds/hero.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.home_text{
+	padding-top: 160px;
+	padding-bottom: 160px;
+}
+.home_text h2{
+	color: #ffffff;
+	font-size: 60px;
+	margin-bottom: 55px;
+}
+.home_text p{
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: 100;
+	line-height:  1;
+}
+.scroll_down{
+	padding-bottom: 50px;
+}
+.scroll_down a{
+	color: #ffffff;
+}
+
