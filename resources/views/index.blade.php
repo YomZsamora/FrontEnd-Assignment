@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yolomy Online Fashion</title>
+    <link rel="shortcut icon" href="{{ URL::asset('images/products/giacket.png')}}">
 
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:100,200,300,400,600,700,900,200italic,300italic,400italic|Merriweather:300,400,300italic">
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
@@ -123,7 +124,10 @@
     <section class="products" id="PRODUCTS">
         <div class="container">
             <div class="row">
-                <h5 class="men"><span>MEN</span></h5>
+                <div class="category-men">
+                    <h4 class="category-heading">MEN</h4>
+                    <div class="sepreater"></div>
+                </div>
             </div>
             <div class=row>
                 <div class="col-md-4 mt45">
@@ -187,7 +191,12 @@
                 </div>
             </div>
             <div class="row">
-                <h5 class="men"><span>WOMEN</span></h5>
+                <div class="row">
+                <div class="category-women">
+                    <h4 class="category-heading">WOMEN</h4>
+                    <div class="sepreater"></div>
+                </div>
+            </div>
             </div>
             <div class=row>
                 <div class="col-md-4 mt45">
