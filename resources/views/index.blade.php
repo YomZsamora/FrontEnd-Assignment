@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TM Apprentice Assignment</title>
+    <title>Yolomy Online Fashion</title>
 
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:100,200,300,400,600,700,900,200italic,300italic,400italic|Merriweather:300,400,300italic">
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
@@ -24,15 +24,35 @@
 
                 <div class="collapse navbar-collapse">
                   <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#HOME">Home</a></li>
-                    <li><a href="#PRODUCTS">Products</a></li>
-                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a href="{{ url('/#GENDER') }}">Products</a></li>
+                    <li><a href="{{ url('/logout') }}">Log Out</a></li>
+                    <li><a href="{{ url('/shopping_cart') }}"><img src="{{ URL::asset('images/logo/shop.png') }}" alt=""></a></a></li>
                   </ul>
                 </div>
               </div>
             </nav> 
 
             <div class="container">
+
+            @if (Session::has('logged_out')) 
+            <div class="alert alert-success" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <i class="fa fa-sign-out"></i>&ensp;{{ Session::get('logged_out') }} 
+            </div>
+            @endif
+
+            @if (Session::has('not_logged_in')) 
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <i class="fa fa-user-times"></i>&ensp;{{ Session::get('not_logged_in') }} <strong><a href="{{ url('/login') }}">Log in here</a></strong>
+            </div>
+            @endif
+
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <div class="home_text">
@@ -47,7 +67,7 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <div class="scroll_down">
-                        <a href="#"><img src="{{ URL::asset('images/mouse_click.png') }}" alt=""></i></a>
+                        <a href="#GENDER"><img src="{{ URL::asset('images/mouse_click.png') }}" alt=""></i></a>
                         </div>
                     </div>
                 </div>
@@ -55,32 +75,59 @@
     </header>
 
 
-    <section class="gender">
+    <section class="gender" id="GENDER">
         <div class="container">
             <div class="row">
                 <div class="pull-left ckbox">
-                    <input type="checkbox" id="men">
-                    <label for="men"><span class="black-text text-darken-2">Men</span></label>
-                    <input type="checkbox" id="women">
-                    <label for="women"><span class="black-text text-darken-2">Women</span></label>
-                    <input type="checkbox" id="children">
-                    <label for="children"><span class="black-text text-darken-2">Children</span></label>
+                    <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Men</label>
+                    <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Women</label>
+                    <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Children</label>
                 </div>
                 <div class="pull-right">
-                    <button class="btn btn-products">SEE ALL PRODUCTS</button>
+                    <a href="{{ url('/shopping_cart') }}" class="btn btn-products btn-xs">VIEW CART</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="products">
+    @if (Session::has('logged_in')) 
+    <div class="alert alert-success no-border-radius" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        <i class="fa fa-sign-in"></i>&ensp;{{ Session::get('logged_in') }} 
+    </div>
+    @endif
+
+    @if (Session::has('item_added')) 
+    <div class="alert alert-success no-border-radius" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        <i class="fa fa-shopping-cart"></i>&ensp;{{ Session::get('item_added') }} <strong><a href="{{ url('/shopping_cart') }}">View Cart</a></strong>
+    </div>
+    @endif
+
+    @if (Session::has('not_logged_in')) 
+    <div class="alert alert-danger no-border-radius" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        <i class="fa fa-user-times"></i>&ensp;{{ Session::get('not_logged_in') }} <strong><a href="{{ url('/login') }}">Log in here</a></strong>
+    </div>
+    @endif
+
+
+    @if ($login_status == TRUE) <p class="client"><i class="fa fa-user"></i> | <span class="text-success">Logged In</span> as <strong class="text-success">{!! $first_name  !!} {!! $last_name !!}</strong></p> @endif
+
+    <section class="products" id="PRODUCTS">
         <div class="container">
             <div class="row">
                 <h5 class="men"><span>MEN</span></h5>
             </div>
             <div class=row>
                 <div class="col-md-4 mt45">
-                    <div class="yolomy-product active">
+                    <div class="yolomy-product">
                         <div class="row pl15"> <h5 class="pull-left">SIZE&nbsp;<i class="fa fa-chevron-down"></i></h5></div>
                         <div class="row">
                             <img class="img-fluid mt20" src="{{ URL::asset('images/products/tshirt.png') }}" alt="">                            
@@ -88,6 +135,14 @@
                         <div class="row pl15 pr15 mt25">                            
                             <h5 class="pull-left type">T-SHIRT</h5>
                             <h5 class="pull-right amount">5,00 &euro;</h5>
+                        </div>
+                        <div class="row">
+                            <a href="{{ url('/buy/men_tshirt') }}" class="btn btn-shopping btn-with-icon btn-block mt10">
+                                <div class="ht40">
+                                    <span class="icon wd40"><i class="fa fa-shopping-cart"></i></span>
+                                    <span class="add-to-cart">Add To Cart</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -101,6 +156,14 @@
                             <h5 class="pull-left type">PANTS FORCLAZ</h5>
                             <h5 class="pull-right amount">30,00 &euro;</h5>
                         </div>
+                        <div class="row">
+                            <a href="{{ url('/buy/pants_forclaz') }}" class="btn btn-shopping btn-with-icon btn-block mt10">
+                                <div class="ht40">
+                                    <span class="icon wd40"><i class="fa fa-shopping-cart"></i></span>
+                                    <span class="add-to-cart">Add To Cart</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div><div class="col-md-4 mt45">
                     <div class="yolomy-product">
@@ -111,6 +174,14 @@
                         <div class="row pl15 pr15 mt25">                            
                             <h5 class="pull-left type">BACKPACK</h5>
                             <h5 class="pull-right amount">60,00 &euro;</h5>
+                        </div>
+                        <div class="row">
+                            <a href="{{ url('/buy/backpack') }}" class="btn btn-shopping btn-with-icon btn-block mt10">
+                                <div class="ht40">
+                                    <span class="icon wd40"><i class="fa fa-shopping-cart"></i></span>
+                                    <span class="add-to-cart">Add To Cart</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -129,6 +200,14 @@
                             <h5 class="pull-left type">GIACKET</h5>
                             <h5 class="pull-right amount">60,00 &euro;</h5>
                         </div>
+                        <div class="row">
+                            <a href="{{ url('/buy/giacket') }}" class="btn btn-shopping btn-with-icon btn-block mt10">
+                                <div class="ht40">
+                                    <span class="icon wd40"><i class="fa fa-shopping-cart"></i></span>
+                                    <span class="add-to-cart">Add To Cart</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 mt45">
@@ -141,6 +220,14 @@
                             <h5 class="pull-left type">TREKKING SHOES</h5>
                             <h5 class="pull-right amount">80,00 &euro;</h5>
                         </div>
+                        <div class="row">
+                            <a href="{{ url('/buy/trekking_shoes') }}" class="btn btn-shopping btn-with-icon btn-block mt10">
+                                <div class="ht40">
+                                    <span class="icon wd40"><i class="fa fa-shopping-cart"></i></span>
+                                    <span class="add-to-cart">Add To Cart</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div><div class="col-md-4 mt45">
                     <div class="yolomy-product">
@@ -151,6 +238,14 @@
                         <div class="row pl15 pr15 mt25">                            
                             <h5 class="pull-left type">T-SHIRT</h5>
                             <h5 class="pull-right amount">20,00 &euro;</h5>
+                        </div>
+                        <div class="row">
+                            <a href="{{ url('/buy/women_tshirt') }}" class="btn btn-shopping btn-with-icon btn-block mt10">
+                                <div class="ht40">
+                                    <span class="icon wd40"><i class="fa fa-shopping-cart"></i></span>
+                                    <span class="add-to-cart">Add To Cart</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -216,7 +311,7 @@
 		    <div class="row">
 		    	<div class="col-md-12">
 			    	<div class="copyright text-center uppercase mt50">
-			    		<p>Copyright 2015. yolomy inc</p>
+			    		<p>Copyright 2018. yolomy inc</p>
 			    	</div>		    		
 		    	</div>
 		    </div>
