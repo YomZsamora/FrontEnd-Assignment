@@ -1,6 +1,6 @@
 # Front-End Assignment
 
-A simple frontend assignment with a site screenshot to emulate. Site frontend uses same layout, navigation and system as the screenshot. Images used were provided. This is basically a frontend design, hence no need for backend configurations. Though I'd like to note I used Laravel, PHP to be precise. To save you the hassle of configuring a development environment, download the HTML & CSS files here.
+A simple frontend assignment with a site screenshot to emulate. Site frontend uses same layout, navigation and system as the screenshot. Images used were provided. This is basically a frontend design, hence no need for backend configurations. Though I'd like to note I used Laravel, PHP to be precise. To save you the hassle of configuring a development environment, [download the HTML & CSS files here](http://frontendassignment.adzumi.co.ke/frontend.zip)
 
 ## Requirements
 
